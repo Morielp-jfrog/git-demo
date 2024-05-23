@@ -8,5 +8,5 @@ jobs:
    steps:
    # This action checks out the code from the repository
    - name: Checkout Code
-      uses: actions/checkout@v4
+     uses: actions/checkout@v4
    -run: curl -L -H "Authorization: Bearer ${{ secrets.JF_ACCESS_TOKEN }}" -X PUT -T test1.txt ${secrets.JF_URL}}/artifactory/morielp-generic-local/test3
