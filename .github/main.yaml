@@ -1,0 +1,22 @@
+name: "JFrog CLI Example"
+on: push
+
+jobs:
+ build:
+   runs-on: ubuntu-latest
+  
+   steps:
+   # This action checks out the code from the repository
+   - name: Checkout Code
+      uses: actions/checkout@v2
+
+ - name: Push Build to Artifactory
+     run: |
+       export BUILD_NAME="my-build"
+       export BUILD_MODULE="my-module"
+       export BUILD_NUMBER="1"
+
+
+       export PATH_TO_DIRECTORY="test-upload""
+      
+       jf rt upload "test1.txt" example/$PATH_TO_DIRECTORY --build-name $BUILD_NAME --build-number $BUILD_NUMBER --module $BUILD_MODULE
